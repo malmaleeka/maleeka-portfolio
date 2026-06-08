@@ -7,13 +7,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -33,6 +30,8 @@
 
     img {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
     }
 
@@ -55,6 +54,7 @@
       font-weight: 700;
       color: #f09ac3;
       text-transform: lowercase;
+      margin-bottom: 20px;
     }
 
     .handwrite {
@@ -62,13 +62,7 @@
       font-size: 45px;
     }
 
-    .small-note {
-      font-size: 14px;
-      opacity: 0.7;
-    }
-
     /* HERO */
-
     .hero {
       min-height: 100vh;
       display: flex;
@@ -81,6 +75,7 @@
       grid-template-columns: 1.2fr 0.8fr;
       gap: 40px;
       align-items: center;
+      width: 100%;
     }
 
     .hero-text {
@@ -89,9 +84,9 @@
     }
 
     .hero-text h1 {
-      font-size: 120px;
+      font-size: 90px;
       color: #ef9bc3;
-      line-height: 0.8;
+      line-height: 0.9;
       text-transform: lowercase;
     }
 
@@ -104,49 +99,42 @@
 
     .top-note {
       position: absolute;
-      top: -30px;
+      top: -50px;
       left: 0;
-      font-size: 45px;
+      font-size: 35px;
       font-family: 'Caveat', cursive;
       transform: rotate(-2deg);
+      color: #2d2d2d;
+      width: 100%;
     }
 
     .hero-image {
-      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
     }
 
-    .hero-image img {
-      border-radius: 10px;
-      filter: grayscale(100%);
+    .heart-photo {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      clip-path: path('M90,27 C138,-36 258,60 90,174 C-78,60 42,-36 90,27 Z');
+      display: block;
+      margin: auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
     }
 
-    .floating-note {
-      position: absolute;
-      right: -10px;
-      top: 20px;
-      background: white;
-      padding: 12px 18px;
-      border-radius: 12px;
-      transform: rotate(6deg);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      font-family: 'Caveat', cursive;
-      font-size: 28px;
+    .heart-photo:hover {
+      transform: scale(1.05);
     }
 
     /* ABOUT */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
     .mini-paper {
       background: #f8f4ec;
-      padding: 30px;
+      padding: 40px;
       border-radius: 5px;
-      min-height: 250px;
       position: relative;
       box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
@@ -158,7 +146,7 @@
 
     .mini-paper p {
       line-height: 1.8;
-      font-size: 14px;
+      font-size: 15px;
     }
 
     .sticker {
@@ -169,12 +157,11 @@
     }
 
     /* SKILLS */
-
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 25px;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     .skill-card {
@@ -202,12 +189,11 @@
     }
 
     /* PROJECTS */
-
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
-      margin-top: 40px;
+      margin-top: 20px;
     }
 
     .project-card {
@@ -227,18 +213,18 @@
       border-radius: 8px;
       margin-bottom: 20px;
       overflow: hidden;
-      background: linear-gradient(135deg, #ef9bc3, #d9b8ff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 35px;
-      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
 
     .project-card h3 {
       margin-bottom: 10px;
-      font-size: 28px;
+      font-size: 24px;
+    }
+
+    .project-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #555;
     }
 
     .tags {
@@ -251,13 +237,12 @@
     .tag {
       background: #ef9bc3;
       color: white;
-      padding: 8px 14px;
+      padding: 6px 12px;
       border-radius: 30px;
-      font-size: 13px;
+      font-size: 12px;
     }
 
     /* CONTACT */
-
     .contact-wrap {
       background: #f8f4ec;
       padding: 50px;
@@ -267,7 +252,7 @@
     }
 
     .contact-title {
-      font-size: 90px;
+      font-size: 70px;
       line-height: 0.9;
       color: #2d2d2d;
       margin-bottom: 30px;
@@ -293,234 +278,181 @@
       margin-bottom: 15px;
     }
 
+    .contact-box p {
+      font-size: 13px;
+      word-break: break-all;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
       font-size: 14px;
+      opacity: 0.7;
     }
 
     /* RESPONSIVE */
-
     @media(max-width: 900px) {
-
       .hero-content {
         grid-template-columns: 1fr;
+        text-align: center;
+        padding-top: 60px;
       }
-
       .hero-text h1 {
-        font-size: 80px;
+        font-size: 70px;
       }
-
-      .contact-title {
-        font-size: 60px;
-      }
-
-    }
-
-    @media(max-width: 600px) {
-
-      section {
-        padding: 40px 5%;
-      }
-
-      .paper {
-        padding: 25px;
-      }
-
-      .hero-text h1 {
-        font-size: 60px;
-      }
-
       .top-note {
         position: static;
         margin-bottom: 20px;
+        font-size: 28px;
       }
+      .contact-title {
+        font-size: 50px;
+      }
+    }
 
+    @media(max-width: 600px) {
+      section {
+        padding: 40px 5%;
+      }
+      .paper {
+        padding: 25px;
+      }
+      .hero-text h1 {
+        font-size: 55px;
+      }
       .title {
         font-size: 45px;
       }
-
       .contact-title {
-        font-size: 45px;
+        font-size: 40px;
       }
-
     }
-
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
-
   <section class="hero">
-
     <div class="paper hero-content">
-
       <div class="hero-text">
-
         <div class="top-note">
-          Hi, since ur here,
-          lemme introduce myself!
+          Hi, since ur here, lemme introduce myself!
         </div>
-
         <h1>
-          maleeka
-          <br>
-          sakhiya
-          <br>
+          maleeka<br>
+          sakhiya<br>
           alfadh
         </h1>
-        
+      </div>
       <div class="hero-image">
-      <br>
-      
-        <img src="https://i.ibb.co.com/LzmB5DH7/IMG-5047.jpg" style="width:150px; height:150px; object-fit:cover; clip-path:path('M75,22 C115,-30 215,50 75,145 C-65,50 35,-30 75,22 Z'); display:block; margin:auto;">
+        <img class="heart-photo" src="https://i.ibb.co.com/LzmB5DH7/IMG-5047.jpg" alt="Maleeka">
       </div>
-
     </div>
-
   </section>
 
   <section>
-    
-      <div class="mini-paper">
-        <div class="sticker">🪩</div>
-        <h3>Who am I?</h3>
-
-        <p>
-          <p> hi! i'm maleeka, a high school student who’s somehow juggling  music, sports, and a growing love for all things creative. i enjoy playing random chords, editing little moments, and turning messy ideas into something (hopefully) aesthetic. i’m not a pro (yet), but that’s kinda the fun part,  just figuring things out, experimenting as i go, and slowly finding my own style. still learning, still exploring, and mostly just having fun with it!
-</p>
-      </div>
-
+    <div class="mini-paper">
+      <div class="sticker">🪩</div>
+      <h3>Who am I?</h3>
+      <p>
+        hi! i'm maleeka, a high school student who’s somehow juggling music, sports, and a growing love for all things creative. i enjoy playing random chords, editing little moments, and turning messy ideas into something (hopefully) aesthetic. i’m not a pro (yet), but that’s kinda the fun part — just figuring things out, experimenting as i go, and slowly finding my own style. still learning, still exploring, and mostly just having fun with it!
+      </p>
+    </div>
   </section>
 
   <section>
-
-    <div class="title">
-      skills
-    </div>
-
+    <div class="title">skills</div>
     <div class="skills-grid">
-
       <div class="skill-card">
         <i class="fa-solid fa-music"></i>
         <h3>instruments</h3>
       </div>
-
       <div class="skill-card">
         <i class="fa-solid fa-camera"></i>
         <h3>photography</h3>
       </div>
-
       <div class="skill-card">
         <i class="fa-solid fa-microphone"></i>
         <h3>public speaking</h3>
       </div>
+    </div>
   </section>
 
   <section>
-
     <div class="title">
-      selected
-      <br>
-      works
+      selected<br>works
     </div>
-
     <div class="projects-grid">
-
       <div class="project-card">
-
         <div class="project-image">
-  <img src="https://i.ibb.co.com/zHnrJxQZ/IMG-5450.jpg">
-</div>
-
+          <img src="https://i.ibb.co.com/zHnrJxQZ/IMG-5450.jpg" alt="Public Speaking">
+        </div>
         <h3>Public Speaking</h3>
-
         <p>
           presenting ideas, sharing perspectives, and learning how to speak with clarity and confidence in front of others. from classroom presentations to small stages, each moment helped me grow.
         </p>
-
         <div class="tags">
           <div class="tag">Confidence</div>
           <div class="tag">Stage Vibes</div>
           <div class="tag">PPT</div>
         </div>
+      </div>
 
       <div class="project-card">
-
-       <div class="project-image">
-  <img src="https://i.ibb.co.com/wZSfQNG0/IMG-5451.jpg">
-</div>
-
+        <div class="project-image">
+          <img src="https://i.ibb.co.com/wZSfQNG0/IMG-5451.jpg" alt="Music Journey">
+        </div>
         <h3>Music Journey</h3>
-
         <p>
           exploring music through playing chords, learning rhythms, and expressing emotions through sound. it’s not always perfect, but it’s always fun and meaningful.
         </p>
-
         <div class="tags">
           <div class="tag">Creativity</div>
           <div class="tag">Chords</div>
           <div class="tag">Practice</div>
         </div>
+      </div>
 
       <div class="project-card">
-
-      <div class="project-image">
-  <img src="https://i.ibb.co.com/vCSbdjkb/IMG-5452.jpg">
-</div>
-
-
+        <div class="project-image">
+          <img src="https://i.ibb.co.com/vCSbdjkb/IMG-5452.jpg" alt="Photography">
+        </div>
         <h3>Photography</h3>
-
         <p>
           capturing little moments and turning them into aesthetic visuals. i enjoy playing with angles, lighting, and editing to create a certain mood and story.
-</p>
-
+        </p>
         <div class="tags">
           <div class="tag">Editing</div>
           <div class="tag">Composition</div>
           <div class="tag">Aesthetic</div>
         </div>
+      </div>
+    </div>
   </section>
 
-
   <section>
-
     <div class="contact-wrap">
-
       <div class="contact-title">
-        and that's
-        <br>
-        a wrap.
+        and that's<br>a wrap.
       </div>
-
       <div class="contact-grid">
-
         <div class="contact-box">
           <i class="fa-solid fa-envelope"></i>
           <h3>Email</h3>
           <p>maleekasakhiya21@gmail.com</p>
         </div>
-
         <div class="contact-box">
           <i class="fa-brands fa-whatsapp"></i>
           <h3>WhatsApp</h3>
           <p>+62xxxxxxxxxx</p>
         </div>
-
         <div class="contact-box">
           <i class="fa-brands fa-pinterest"></i>
           <h3>Pinterest</h3>
           <p>pinterest.com/username</p>
         </div>
-
       </div>
-
     </div>
-
   </section>
-
 
   <footer>
     © 2026
@@ -528,5 +460,3 @@
 
 </body>
 </html>
-
-
